@@ -72,32 +72,85 @@
         </div>
       </div>      
     <br>
-    <div class="d-flex gap-3">
-        <div class="card" style="width: 15rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+    <div class="container-fluid ">
+      <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="panter.png" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="sonic.png" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="uncharted.png" class="d-block w-100 img-fluid" alt="...">
+          </div>
         </div>
-        <div class="card" style="width: 15rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 15rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+    
+        <!-- Botones de navegación correctamente ubicados dentro del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>      
+  <br>
+  <div class="container m-4 d-flex" style="height: 100%; width:100%"id="cards-Container">
+    <!-- Las tarjetas se agregarán aquí --> 
+  </div>
+
+  <script>
+   const tarjetasInfo= [
+    {   
+        index:1,
+        title: "Avengers",
+        text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
+        imgSrc: "imagenes/Avengers.jpg"
+    },
+    {
+        index:2,
+        title: "Intensamente 2",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
+        imgSrc: "imagenes/Intensamente.jpg"
+    },
+    {
+        index:3,
+        title: "Minecraft",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
+        imgSrc: "imagenes/Minecraft.jpg"
+    },
+    {   
+        index:4,
+        title: "Nosferatu",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
+        imgSrc:"imagenes/Nosferatu.jpg"
+    },
+    {
+        index:5,
+        title: "Mufasa",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
+        imgSrc: "imagenes/Mufasa.jpg"
+    }
+];
+
+const NcardsContainer = document.getElementById('cards-Container');
+tarjetasInfo.forEach(index=>{
+    const card =  `
+    <div class="card m-4" style="width: 1000px; height: 300px" id="cards-Container">
+        <img src="${index.imgSrc}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${index.title}</h5>
+      <p class="card-text text-truncate" title="${index.text}">${index.text}.</p>
+      <a href="#" class="btn btn-primary">Comprar</a>
     </div>
+    `;
+   NcardsContainer.innerHTML += card;
+})
+  </script>
+</body>
     
 </body>
 </html>
