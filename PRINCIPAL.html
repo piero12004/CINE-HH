@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </head>
 <body>
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
     
@@ -24,16 +25,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="PRINCIPAL.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cartelera</a>
+              <a class="nav-link" href="cartelera.html">Cartelera</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Estrenos.html">Estrenos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="Contacto.html">Contacto</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -42,9 +43,9 @@
           </form>
         </div>
       </div>
-    </nav>
-    <!--Carousel-->
+    </nav>   
     <br>
+    <!--Carousel-->
     <div class="container-fluid">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         
@@ -84,58 +85,69 @@
       </div>
     </div>    
     <br>
-    <div class="container m-4 d-flex" style="height: 100%; width:100%"id="cards-Container">
-      <!-- Las tarjetas se agregarán aquí --> 
-    </div>
-  
-    <script>
-     const tarjetasInfo= [
-      {   
-          index:1,
-          title: "Avengers",
-          text:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
-          imgSrc: "imagenes/Avengers.jpg"
-      },
-      {
-          index:2,
-          title: "Intensamente 2",
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
-          imgSrc: "imagenes/Intensamente.jpg"
-      },
-      {
-          index:3,
-          title: "Minecraft",
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
-          imgSrc: "imagenes/Minecraft.jpg"
-      },
-      {   
-          index:4,
-          title: "Nosferatu",
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
-          imgSrc:"imagenes/Nosferatu.jpg"
-      },
-      {
-          index:5,
-          title: "Mufasa",
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sunt quibusdam eligendi magni labore inventore, vitae nesciunt debitis dicta? Dolor cupiditate eum repellendus libero autem atque cumque enim, laborum accusantium.",
-          imgSrc: "imagenes/Mufasa.jpg"
-      }
-  ];
-  
-  const NcardsContainer = document.getElementById('cards-Container');
-  tarjetasInfo.forEach(index=>{
-      const card =  `
-      <div class="card m-4" style="width: 1000px; height: 300px" id="cards-Container">
-          <img src="${index.imgSrc}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${index.title}</h5>
-        <p class="card-text text-truncate" title="${index.text}">${index.text}.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
+    <!--tarjetas-->
+
+    <div class="container my-4">
+      <div class="row" id="cards-Container">
+        <!-- Las tarjetas se agregarán aquí dinámicamente -->
       </div>
-      `;
-     NcardsContainer.innerHTML += card;
-  })
-    </script>
+    </div>
+
+    <script>
+    const tarjetasInfo = [
+      {
+        index: 1,
+        title: "Minecraft",
+        text: "Del videojuego al cine: una aventura de píxeles convertida en película.",
+        imgSrc: "imagenes/mine_card.png"
+      },
+      {
+        index: 2,
+        title: "Flow",
+        text: "Un gato que busca sobrevivir en un mundo postapocalíptico",
+        imgSrc: "imagenes/flow_card.png"
+      },
+      {
+        index: 3,
+        title: "Blancanieves",
+        text: "Una nueva versión de acción real del clásico de 1937.",
+        imgSrc: "imagenes/blanca_card.png"
+      },
+      {
+        index: 4,
+        title: "Soltera, Casada, Viuda, Divorciada 2",
+        text: "Cuatro amigas emprenden un viaje a la nieve",
+        imgSrc: "imagenes/scvd2_card.png"
+      },
+      {
+        index: 5,
+        title: "Amatheur: Operación Venganza",
+        text: "Un agente de la CIA buscando venganza",
+        imgSrc: "imagenes/amatheur_card.png"
+      }
+    ];
+
+const NcardsContainer = document.getElementById('cards-Container');
+
+tarjetasInfo.forEach(info => {
+  const card = `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch mb-4">
+      <div class="card shadow-sm w-100">
+        <img src="${info.imgSrc}" class="card-img-top" alt="${info.title}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${info.title}</h5>
+          <p class="card-text flex-grow-1 text-truncate" title="${info.text}">${info.text}</p>
+          <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+        </div>
+      </div>
+    </div>
+  `;
+  NcardsContainer.innerHTML += card;
+});
+</script>
+
+
+    <br>
     <footer class="bg-dark text-light pt-4 pb-2 mt-5">
       <div class="container">
         <div class="row">
